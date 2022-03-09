@@ -1,0 +1,590 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		64525A2B27D9215A00AE4FFF /* Memoji_OpenCVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64525A2A27D9215A00AE4FFF /* Memoji_OpenCVApp.swift */; };
+		64525A2D27D9215A00AE4FFF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64525A2C27D9215A00AE4FFF /* ContentView.swift */; };
+		64525A2F27D9216000AE4FFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64525A2E27D9216000AE4FFF /* Assets.xcassets */; };
+		64525A3227D9216000AE4FFF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64525A3127D9216000AE4FFF /* Preview Assets.xcassets */; };
+		64525A3C27D9216000AE4FFF /* Memoji_OpenCVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64525A3B27D9216000AE4FFF /* Memoji_OpenCVTests.swift */; };
+		64525A4627D9216100AE4FFF /* Memoji_OpenCVUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64525A4527D9216100AE4FFF /* Memoji_OpenCVUITests.swift */; };
+		64525A4827D9216100AE4FFF /* Memoji_OpenCVUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64525A4727D9216100AE4FFF /* Memoji_OpenCVUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		64525A3827D9216000AE4FFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 64525A1F27D9215900AE4FFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 64525A2627D9215900AE4FFF;
+			remoteInfo = "Memoji-OpenCV";
+		};
+		64525A4227D9216100AE4FFF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 64525A1F27D9215900AE4FFF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 64525A2627D9215900AE4FFF;
+			remoteInfo = "Memoji-OpenCV";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		64525A2727D9215900AE4FFF /* Memoji-OpenCV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Memoji-OpenCV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		64525A2A27D9215A00AE4FFF /* Memoji_OpenCVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memoji_OpenCVApp.swift; sourceTree = "<group>"; };
+		64525A2C27D9215A00AE4FFF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		64525A2E27D9216000AE4FFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		64525A3127D9216000AE4FFF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		64525A3727D9216000AE4FFF /* Memoji-OpenCVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Memoji-OpenCVTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		64525A3B27D9216000AE4FFF /* Memoji_OpenCVTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memoji_OpenCVTests.swift; sourceTree = "<group>"; };
+		64525A4127D9216100AE4FFF /* Memoji-OpenCVUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Memoji-OpenCVUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		64525A4527D9216100AE4FFF /* Memoji_OpenCVUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memoji_OpenCVUITests.swift; sourceTree = "<group>"; };
+		64525A4727D9216100AE4FFF /* Memoji_OpenCVUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memoji_OpenCVUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		64525A2427D9215900AE4FFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64525A3427D9216000AE4FFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64525A3E27D9216000AE4FFF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		64525A1E27D9215900AE4FFF = {
+			isa = PBXGroup;
+			children = (
+				64525A2927D9215900AE4FFF /* Memoji-OpenCV */,
+				64525A3A27D9216000AE4FFF /* Memoji-OpenCVTests */,
+				64525A4427D9216100AE4FFF /* Memoji-OpenCVUITests */,
+				64525A2827D9215900AE4FFF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		64525A2827D9215900AE4FFF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				64525A2727D9215900AE4FFF /* Memoji-OpenCV.app */,
+				64525A3727D9216000AE4FFF /* Memoji-OpenCVTests.xctest */,
+				64525A4127D9216100AE4FFF /* Memoji-OpenCVUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		64525A2927D9215900AE4FFF /* Memoji-OpenCV */ = {
+			isa = PBXGroup;
+			children = (
+				64525A2A27D9215A00AE4FFF /* Memoji_OpenCVApp.swift */,
+				64525A2C27D9215A00AE4FFF /* ContentView.swift */,
+				64525A2E27D9216000AE4FFF /* Assets.xcassets */,
+				64525A3027D9216000AE4FFF /* Preview Content */,
+			);
+			path = "Memoji-OpenCV";
+			sourceTree = "<group>";
+		};
+		64525A3027D9216000AE4FFF /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				64525A3127D9216000AE4FFF /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		64525A3A27D9216000AE4FFF /* Memoji-OpenCVTests */ = {
+			isa = PBXGroup;
+			children = (
+				64525A3B27D9216000AE4FFF /* Memoji_OpenCVTests.swift */,
+			);
+			path = "Memoji-OpenCVTests";
+			sourceTree = "<group>";
+		};
+		64525A4427D9216100AE4FFF /* Memoji-OpenCVUITests */ = {
+			isa = PBXGroup;
+			children = (
+				64525A4527D9216100AE4FFF /* Memoji_OpenCVUITests.swift */,
+				64525A4727D9216100AE4FFF /* Memoji_OpenCVUITestsLaunchTests.swift */,
+			);
+			path = "Memoji-OpenCVUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		64525A2627D9215900AE4FFF /* Memoji-OpenCV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64525A4B27D9216100AE4FFF /* Build configuration list for PBXNativeTarget "Memoji-OpenCV" */;
+			buildPhases = (
+				64525A2327D9215900AE4FFF /* Sources */,
+				64525A2427D9215900AE4FFF /* Frameworks */,
+				64525A2527D9215900AE4FFF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Memoji-OpenCV";
+			productName = "Memoji-OpenCV";
+			productReference = 64525A2727D9215900AE4FFF /* Memoji-OpenCV.app */;
+			productType = "com.apple.product-type.application";
+		};
+		64525A3627D9216000AE4FFF /* Memoji-OpenCVTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64525A4E27D9216100AE4FFF /* Build configuration list for PBXNativeTarget "Memoji-OpenCVTests" */;
+			buildPhases = (
+				64525A3327D9216000AE4FFF /* Sources */,
+				64525A3427D9216000AE4FFF /* Frameworks */,
+				64525A3527D9216000AE4FFF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				64525A3927D9216000AE4FFF /* PBXTargetDependency */,
+			);
+			name = "Memoji-OpenCVTests";
+			productName = "Memoji-OpenCVTests";
+			productReference = 64525A3727D9216000AE4FFF /* Memoji-OpenCVTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		64525A4027D9216000AE4FFF /* Memoji-OpenCVUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64525A5127D9216100AE4FFF /* Build configuration list for PBXNativeTarget "Memoji-OpenCVUITests" */;
+			buildPhases = (
+				64525A3D27D9216000AE4FFF /* Sources */,
+				64525A3E27D9216000AE4FFF /* Frameworks */,
+				64525A3F27D9216000AE4FFF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				64525A4327D9216100AE4FFF /* PBXTargetDependency */,
+			);
+			name = "Memoji-OpenCVUITests";
+			productName = "Memoji-OpenCVUITests";
+			productReference = 64525A4127D9216100AE4FFF /* Memoji-OpenCVUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		64525A1F27D9215900AE4FFF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1320;
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					64525A2627D9215900AE4FFF = {
+						CreatedOnToolsVersion = 13.2.1;
+					};
+					64525A3627D9216000AE4FFF = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 64525A2627D9215900AE4FFF;
+					};
+					64525A4027D9216000AE4FFF = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 64525A2627D9215900AE4FFF;
+					};
+				};
+			};
+			buildConfigurationList = 64525A2227D9215900AE4FFF /* Build configuration list for PBXProject "Memoji-OpenCV" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 64525A1E27D9215900AE4FFF;
+			productRefGroup = 64525A2827D9215900AE4FFF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				64525A2627D9215900AE4FFF /* Memoji-OpenCV */,
+				64525A3627D9216000AE4FFF /* Memoji-OpenCVTests */,
+				64525A4027D9216000AE4FFF /* Memoji-OpenCVUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		64525A2527D9215900AE4FFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64525A3227D9216000AE4FFF /* Preview Assets.xcassets in Resources */,
+				64525A2F27D9216000AE4FFF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64525A3527D9216000AE4FFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64525A3F27D9216000AE4FFF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		64525A2327D9215900AE4FFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64525A2D27D9215A00AE4FFF /* ContentView.swift in Sources */,
+				64525A2B27D9215A00AE4FFF /* Memoji_OpenCVApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64525A3327D9216000AE4FFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64525A3C27D9216000AE4FFF /* Memoji_OpenCVTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		64525A3D27D9216000AE4FFF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				64525A4827D9216100AE4FFF /* Memoji_OpenCVUITestsLaunchTests.swift in Sources */,
+				64525A4627D9216100AE4FFF /* Memoji_OpenCVUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		64525A3927D9216000AE4FFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 64525A2627D9215900AE4FFF /* Memoji-OpenCV */;
+			targetProxy = 64525A3827D9216000AE4FFF /* PBXContainerItemProxy */;
+		};
+		64525A4327D9216100AE4FFF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 64525A2627D9215900AE4FFF /* Memoji-OpenCV */;
+			targetProxy = 64525A4227D9216100AE4FFF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		64525A4927D9216100AE4FFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		64525A4A27D9216100AE4FFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		64525A4C27D9216100AE4FFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Memoji-OpenCV/Preview Content\"";
+				DEVELOPMENT_TEAM = QA8D4M9LK9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.perso.Memoji-OpenCV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		64525A4D27D9216100AE4FFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Memoji-OpenCV/Preview Content\"";
+				DEVELOPMENT_TEAM = QA8D4M9LK9;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.perso.Memoji-OpenCV";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		64525A4F27D9216100AE4FFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QA8D4M9LK9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.perso.Memoji-OpenCVTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Memoji-OpenCV.app/Memoji-OpenCV";
+			};
+			name = Debug;
+		};
+		64525A5027D9216100AE4FFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QA8D4M9LK9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.perso.Memoji-OpenCVTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Memoji-OpenCV.app/Memoji-OpenCV";
+			};
+			name = Release;
+		};
+		64525A5227D9216100AE4FFF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QA8D4M9LK9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.perso.Memoji-OpenCVUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Memoji-OpenCV";
+			};
+			name = Debug;
+		};
+		64525A5327D9216100AE4FFF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QA8D4M9LK9;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.perso.Memoji-OpenCVUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Memoji-OpenCV";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		64525A2227D9215900AE4FFF /* Build configuration list for PBXProject "Memoji-OpenCV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64525A4927D9216100AE4FFF /* Debug */,
+				64525A4A27D9216100AE4FFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64525A4B27D9216100AE4FFF /* Build configuration list for PBXNativeTarget "Memoji-OpenCV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64525A4C27D9216100AE4FFF /* Debug */,
+				64525A4D27D9216100AE4FFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64525A4E27D9216100AE4FFF /* Build configuration list for PBXNativeTarget "Memoji-OpenCVTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64525A4F27D9216100AE4FFF /* Debug */,
+				64525A5027D9216100AE4FFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64525A5127D9216100AE4FFF /* Build configuration list for PBXNativeTarget "Memoji-OpenCVUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				64525A5227D9216100AE4FFF /* Debug */,
+				64525A5327D9216100AE4FFF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 64525A1F27D9215900AE4FFF /* Project object */;
+}
