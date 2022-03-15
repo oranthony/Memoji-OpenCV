@@ -108,3 +108,4 @@ Memoji-OpenCV/SceneKit Asset Catalog.scnassets/face-model.scn
 # End of https://www.toptal.com/developers/gitignore/api/swift,xcode
 Memoji-OpenCV/SceneKit Asset Catalog.scnassets/face-model.scn
 Memoji-OpenCV/SceneKit Asset Catalog.scnassets/face-model.scn
+.DS_Store
