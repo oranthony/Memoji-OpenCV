@@ -24,9 +24,9 @@ class FaceTools {
     /*
      Returns a vector of Points corresponding to the position of the facial landmarks
      */
-    vector<Point2f> getArrayOfLandmarksFromImage(Mat image, CascadeClassifier faceDetector, cv::Ptr<Facemark> facemark);
+    optional<vector<Point2f>> getArrayOfLandmarksFromImage(Mat image, CascadeClassifier faceDetector, cv::Ptr<Facemark> facemark);
     
-    private:
+    //private:
     
     
 };

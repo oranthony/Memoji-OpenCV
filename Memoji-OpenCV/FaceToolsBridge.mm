@@ -30,7 +30,6 @@ cv::Ptr<Facemark> facemark = FacemarkLBF::create();
 - (NSArray<NSValue *> *)cvPointToSwiftPoint: (vector<Point2f>) number {
     NSMutableArray *mutableArray = [[NSMutableArray alloc] init];
     for (int i = 0; i < number.size(); i++) {
-        //array = [array arrayByAddingObject:[]
         [mutableArray addObject:[NSValue valueWithCGPoint:CGPointMake(number[i].x, number[i].y)]];
     }
     
@@ -66,7 +65,6 @@ cv::Ptr<Facemark> facemark = FacemarkLBF::create();
 }
 
 - (NSArray<NSValue *> *) getArrayOfLandmarksFromImage: (UIImage *) image {
-    
     // convert uiimage to mat
     cv::Mat opencvImage;
     UIImageToMat(image, opencvImage, true);
@@ -75,17 +73,24 @@ cv::Ptr<Facemark> facemark = FacemarkLBF::create();
     cv::Mat convertedColorSpaceImage;
     cv::cvtColor(opencvImage, convertedColorSpaceImage, COLOR_RGBA2RGB);
     
-    // Run face and landmark detection
+    // C++ source code with OpenCV implementation
     FaceTools faceDetectorTools;
     
-    ///////////////// HERE TO CONTINUE RETURN NULL //////////
-    vector<Point2f> vector = faceDetectorTools.getArrayOfLandmarksFromImage(convertedColorSpaceImage, faceDetector, facemark);
+    // Sending the picture and the classifier to get an array of facial landmark
+    auto landmarkVector = faceDetectorTools.getArrayOfLandmarksFromImage(convertedColorSpaceImage, faceDetector, facemark);
     
-    return [self cvPointToSwiftPoint:vector];
+    // The returned value is a C++ optional, so we open it and re-asign values
+    if (landmarkVector.has_value()) {
+        // If the optional contains an array, we transform it from an array of cv::points to an NSArray of CGPoint
+        return [self cvPointToSwiftPoint:landmarkVector.value()];
+    } else {
+        // If the optional doens't contain a value, we return an empty NSArray
+        NSArray *array = [NSArray array];
+        return array;
+    }
 }
 
 - (UIImage *) getAnnotatedImageFrom: (UIImage *) image {
-    
     // convert uiimage to mat
     cv::Mat opencvImage;
     UIImageToMat(image, opencvImage, true);
@@ -94,9 +99,10 @@ cv::Ptr<Facemark> facemark = FacemarkLBF::create();
     cv::Mat convertedColorSpaceImage;
     cv::cvtColor(opencvImage, convertedColorSpaceImage, COLOR_RGBA2RGB);
     
-    // Run face and landmark detection
+    // C++ source code with OpenCV implementation
     FaceTools faceDetectorTools;
     
+    // Sending the picture and the classifier to get an annotated image with the found landmarks
     cv::Mat annotatedImage = faceDetectorTools.getAnnotatedImageWithLandmarkFromImage(convertedColorSpaceImage, faceDetector, facemark);
     
     // convert mat to uiimage and return it to the caller
