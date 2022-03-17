@@ -19,10 +19,11 @@
 		64525A5A27D953D100AE4FFF /* MemojiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64525A5927D953CE00AE4FFF /* MemojiView.swift */; };
 		64525A5C27D9546400AE4FFF /* MemojiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64525A5B27D9546400AE4FFF /* MemojiViewModel.swift */; };
 		64525A6027D9632E00AE4FFF /* FaceTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64525A5E27D9632E00AE4FFF /* FaceTools.cpp */; };
-		64525A6227D9643400AE4FFF /* FaceToolsBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 64525A6127D9643300AE4FFF /* FaceToolsBridge.m */; };
+		64525A6227D9643400AE4FFF /* FaceToolsBridge.mm in Sources */ = {isa = PBXBuildFile; fileRef = 64525A6127D9643300AE4FFF /* FaceToolsBridge.mm */; };
 		64525A6527DA473D00AE4FFF /* FaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64525A6427DA473C00AE4FFF /* FaceModel.swift */; };
 		64525A6827DAA70600AE4FFF /* haarcascade_frontalface_alt2.xml in Resources */ = {isa = PBXBuildFile; fileRef = 64525A6627DAA70600AE4FFF /* haarcascade_frontalface_alt2.xml */; };
 		64525A6927DAA70600AE4FFF /* lbfmodel.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 64525A6727DAA70600AE4FFF /* lbfmodel.yaml */; };
+		92AD309A27E15878007A03B8 /* CameraLandmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AD309927E15878007A03B8 /* CameraLandmarkView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,11 +61,12 @@
 		64525A5D27D9632D00AE4FFF /* Memoji-OpenCV-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Memoji-OpenCV-Bridging-Header.h"; sourceTree = "<group>"; };
 		64525A5E27D9632E00AE4FFF /* FaceTools.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FaceTools.cpp; sourceTree = "<group>"; };
 		64525A5F27D9632E00AE4FFF /* FaceTools.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FaceTools.hpp; sourceTree = "<group>"; };
-		64525A6127D9643300AE4FFF /* FaceToolsBridge.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; path = FaceToolsBridge.m; sourceTree = "<group>"; };
+		64525A6127D9643300AE4FFF /* FaceToolsBridge.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = FaceToolsBridge.mm; sourceTree = "<group>"; };
 		64525A6327D9648500AE4FFF /* FaceToolsBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaceToolsBridge.h; sourceTree = "<group>"; };
 		64525A6427DA473C00AE4FFF /* FaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceModel.swift; sourceTree = "<group>"; };
 		64525A6627DAA70600AE4FFF /* haarcascade_frontalface_alt2.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = haarcascade_frontalface_alt2.xml; sourceTree = "<group>"; };
 		64525A6727DAA70600AE4FFF /* lbfmodel.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = lbfmodel.yaml; sourceTree = "<group>"; };
+		92AD309927E15878007A03B8 /* CameraLandmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraLandmarkView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				64525A2C27D9215A00AE4FFF /* ContentView.swift */,
 				64525A5927D953CE00AE4FFF /* MemojiView.swift */,
 				64525A5B27D9546400AE4FFF /* MemojiViewModel.swift */,
+				92AD309927E15878007A03B8 /* CameraLandmarkView.swift */,
 				64525A6427DA473C00AE4FFF /* FaceModel.swift */,
 				64525A5727D9504100AE4FFF /* SceneKit Asset Catalog.scnassets */,
 				64525A2E27D9216000AE4FFF /* Assets.xcassets */,
@@ -130,7 +133,7 @@
 				64525A5E27D9632E00AE4FFF /* FaceTools.cpp */,
 				64525A5F27D9632E00AE4FFF /* FaceTools.hpp */,
 				64525A5D27D9632D00AE4FFF /* Memoji-OpenCV-Bridging-Header.h */,
-				64525A6127D9643300AE4FFF /* FaceToolsBridge.m */,
+				64525A6127D9643300AE4FFF /* FaceToolsBridge.mm */,
 				64525A6327D9648500AE4FFF /* FaceToolsBridge.h */,
 			);
 			path = "Memoji-OpenCV";
@@ -304,7 +307,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				64525A2D27D9215A00AE4FFF /* ContentView.swift in Sources */,
-				64525A6227D9643400AE4FFF /* FaceToolsBridge.m in Sources */,
+				92AD309A27E15878007A03B8 /* CameraLandmarkView.swift in Sources */,
+				64525A6227D9643400AE4FFF /* FaceToolsBridge.mm in Sources */,
 				64525A5C27D9546400AE4FFF /* MemojiViewModel.swift in Sources */,
 				64525A5A27D953D100AE4FFF /* MemojiView.swift in Sources */,
 				64525A6027D9632E00AE4FFF /* FaceTools.cpp in Sources */,

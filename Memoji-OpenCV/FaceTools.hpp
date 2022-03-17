@@ -19,7 +19,7 @@ class FaceTools {
     /*
      Returns image with facial landmarks on the picture overlay
      */
-    Mat getAnnotedImageWithLandmarkFromImage(Mat image, CascadeClassifier faceDetector, cv::Ptr<Facemark> facemark);
+    Mat getAnnotatedImageWithLandmarkFromImage(Mat image, CascadeClassifier faceDetector, cv::Ptr<Facemark> facemark);
     
     /*
      Returns a vector of Points corresponding to the position of the facial landmarks

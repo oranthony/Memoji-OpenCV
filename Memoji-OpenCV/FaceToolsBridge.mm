@@ -66,40 +66,41 @@ cv::Ptr<Facemark> facemark = FacemarkLBF::create();
 }
 
 - (NSArray<NSValue *> *) getArrayOfLandmarksFromImage: (UIImage *) image {
+    
     // convert uiimage to mat
     cv::Mat opencvImage;
     UIImageToMat(image, opencvImage, true);
     
-    // convert colorspace to the one expected by the lane detector algorithm (RGB)
+    // convert colorspace to the one expected by the face detector algorithm (RGB)
     cv::Mat convertedColorSpaceImage;
     cv::cvtColor(opencvImage, convertedColorSpaceImage, COLOR_RGBA2RGB);
     
-    // Run lane detection
-    FaceTools laneDetector;
+    // Run face and landmark detection
+    FaceTools faceDetectorTools;
     
     ///////////////// HERE TO CONTINUE RETURN NULL //////////
-    vector<Point2f> vector = laneDetector.getArrayOfLandmarksFromImage(convertedColorSpaceImage, faceDetector, facemark);
+    vector<Point2f> vector = faceDetectorTools.getArrayOfLandmarksFromImage(convertedColorSpaceImage, faceDetector, facemark);
     
     return [self cvPointToSwiftPoint:vector];
 }
 
-- (UIImage *) getAnnotedImageWithLandmarkFromImage: (UIImage *) image {
+- (UIImage *) getAnnotatedImageFrom: (UIImage *) image {
     
     // convert uiimage to mat
     cv::Mat opencvImage;
     UIImageToMat(image, opencvImage, true);
     
-    // convert colorspace to the one expected by the lane detector algorithm (RGB)
+    // convert colorspace to the one expected by the face detector algorithm (RGB)
     cv::Mat convertedColorSpaceImage;
     cv::cvtColor(opencvImage, convertedColorSpaceImage, COLOR_RGBA2RGB);
     
-    // Run lane detection
-    FaceTools laneDetector;
+    // Run face and landmark detection
+    FaceTools faceDetectorTools;
     
-    cv::Mat imageWithLaneDetected = laneDetector.getAnnotedImageWithLandmarkFromImage(convertedColorSpaceImage, faceDetector, facemark);
+    cv::Mat annotatedImage = faceDetectorTools.getAnnotatedImageWithLandmarkFromImage(convertedColorSpaceImage, faceDetector, facemark);
     
     // convert mat to uiimage and return it to the caller
-    return MatToUIImage(imageWithLaneDetected);
+    return MatToUIImage(annotatedImage);
 }
     
 

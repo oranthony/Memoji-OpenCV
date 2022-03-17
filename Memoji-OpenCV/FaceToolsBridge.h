@@ -12,7 +12,7 @@
 
 - (void)initialize;
 
-- (UIImage *) getAnnotedImageWithLandmarkFromImage: (UIImage *) image;
+- (UIImage *) getAnnotatedImageFrom: (UIImage *) image;
 
 - (NSArray<NSValue *> *) getArrayOfLandmarksFromImage: (UIImage *) image;
 

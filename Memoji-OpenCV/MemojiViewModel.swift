@@ -10,9 +10,13 @@ import SwiftUI
 import SceneKit
 import ARKit
 
-class MemojiViewModel: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate, ObservableObject {
+class MemojiViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, ObservableObject {
     @Published var faceModel:FaceModel = FaceModel() // ViewModel have a Model
     @Published var noseReferentiel: Float = 0.0
+    
+    // UI Image for the camera feed (if the user load the view to have the facial landmark on the front camera feed
+    @Published var frame: Image?
+    private var isCamLandmarkMode: Bool = false;
     
     var scene: SCNScene! /*{
         //SCNScene(named: "Models.scnassets/Avatar.scn")
@@ -42,6 +46,14 @@ class MemojiViewModel: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate, Ob
         initialize()
     }
     
+    init(mode: String) {
+        if (mode == "cam") {
+            self.isCamLandmarkMode = true
+        }
+        super.init()
+        initialize()
+    }
+    
     /**
     Initialize the bridge to the C++ code and the SceneKit elements
      */
@@ -49,9 +61,12 @@ class MemojiViewModel: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate, Ob
         // Set up the Objective-C++ Bridge
         FaceToolsBridge().initialize()
         
-        // Set up the SceneKit elements with the 3D model head
-        setScene()
         setCamera()
+        
+        // Set up the SceneKit elements with the 3D model head
+        if (!isCamLandmarkMode) {
+            setScene()
+        }
     }
     
     
@@ -76,9 +91,17 @@ class MemojiViewModel: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate, Ob
         CVPixelBufferUnlockBaseAddress(imageBuffer, CVPixelBufferLockFlags.readOnly)
         let image = UIImage(cgImage: quartzImage)
             
+        if (isCamLandmarkMode) {
+            // In Camera Mode we want to get the image with the landmarks annotated
+            let annotatedImage = Image(uiImage: FaceToolsBridge().getAnnotatedImage(from: image))
             
+            DispatchQueue.main.async {
+                self.frame = annotatedImage
+            }
+        } else {
+            // In memoji mode we want the array of landmarks position to map them on our 3D model
             let jawOpen = FaceToolsBridge().getArrayOfLandmarks(from: image).map { $0.cgPointValue }
-        faceModel.setArray(array: jawOpen)
+            faceModel.setArray(array: jawOpen)
             
             // Updating model blendshape in scene kit with the user's facial landmarks
             DispatchQueue.main.async {
@@ -91,6 +114,7 @@ class MemojiViewModel: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate, Ob
                 self.node1?.morpher?.setWeight(CGFloat(self.faceModel.eyeBlinkLeft), forTargetNamed: "eyeBlink_L")
             }
         }
+    }
 
     
     
@@ -101,7 +125,7 @@ class MemojiViewModel: NSObject,AVCaptureVideoDataOutputSampleBufferDelegate, Ob
             deviceTypes: [.builtInWideAngleCamera, .builtInDualCamera, .builtInTrueDepthCamera],
             mediaType: .video,
             position: .front).devices.first else {
-                fatalError("No back camera device found, please make sure to run SimpleLaneDetection in an iOS device and not a simulator")
+                fatalError("No front camera device found, please make sure to run this App in an iOS device and not a simulator")
         }
         let cameraInput = try! AVCaptureDeviceInput(device: device)
         self.captureSession.addInput(cameraInput)

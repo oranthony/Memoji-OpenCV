@@ -22,19 +22,20 @@ struct ContentView: View {
         NavigationView {
             VStack (
                 alignment: .center,
-                spacing: 10
+                spacing: 30
             ) {
-                Text("Hello, world!")
+                Text("Welcome to Memoji Opencv")
                     .padding()
                 
                 NavigationLink(destination: NavigationLazyView(MemojiView())) {
                                     Text("Memoji View")
                                 }
-                                .navigationTitle("Navigation")
+                                .navigationTitle("Memoji View")
                 
-                Button("Button 2") {
-                    print("button1")
-                }
+                NavigationLink(destination: NavigationLazyView(CameraLandmarkView())) {
+                                    Text("OpenCV Landmark View")
+                                }
+                                .navigationTitle("OpenCV Landmark View")
             }
         }
     }

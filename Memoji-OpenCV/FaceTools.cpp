@@ -96,7 +96,7 @@ void drawLandmarks(Mat &im, vector<Point2f> &landmarks)
 void drawLandmarks(Mat &im, vector<Point2f> &landmarks, Rect faceLarge)
 {
     // Draw face for the 68-point model.
-    if (landmarks.size() == 69)
+    if (landmarks.size() == 68)
     {
       drawPolyline(im, landmarks, 0, 16);           // Jaw line
       drawPolyline(im, landmarks, 17, 21);          // Left eyebrow
@@ -171,7 +171,7 @@ vector<Point2f> FaceTools::getArrayOfLandmarksFromImage(Mat image, CascadeClassi
 /**
  Get annoted image with landmarks from image
  */
-Mat FaceTools::getAnnotedImageWithLandmarkFromImage(Mat image, CascadeClassifier faceDetector, Ptr<Facemark> facemark) {
+Mat FaceTools::getAnnotatedImageWithLandmarkFromImage(Mat image, CascadeClassifier faceDetector, Ptr<Facemark> facemark) {
     
     Mat gray;
     
@@ -182,13 +182,13 @@ Mat FaceTools::getAnnotedImageWithLandmarkFromImage(Mat image, CascadeClassifier
     // Convert frame to grayscale because
     // faceDetector requires grayscale image.
     cvtColor(image, gray, COLOR_BGR2GRAY);
-
+    
     // Detect faces
     faceDetector.detectMultiScale(gray, faces);
-    
+   
     cv::Scalar color(0, 105, 205);
     int frame_thickness = 4;
-        
+    
     
     // Variable for landmarks.
     // Landmarks for one face is a vector of points
