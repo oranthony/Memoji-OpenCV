@@ -11,28 +11,27 @@ import SceneKit
 import ARKit
 
 class MemojiViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, ObservableObject {
-    @Published var faceModel:FaceModel = FaceModel() // ViewModel have a Model
+    
+    // Model to store facial landmarks data and process them
+    @Published var faceModel:FaceModel = FaceModel()
     @Published var noseReferentiel: Float = 0.0
     
-    // UI Image for the camera feed (if the user load the view to have the facial landmark on the front camera feed
-    @Published var frame: Image?
+    // If the user want to see the annotated image instead of the 3D model of a face
     private var isCamLandmarkMode: Bool = false;
-    
-    var scene: SCNScene! /*{
-        //SCNScene(named: "Models.scnassets/Avatar.scn")
-        SCNScene(named: "SceneKit Asset Catalog.scnassets/face-model.scn")
-    }*/
-    
-    var contentNode: SCNReferenceNode? // Reference to the .scn file
+    // UI Image to display the annotated images. Used only if isCamLandmarkMode is true
+    @Published var frame: Image?
+
+    // Scene that will be holding our 3D assets (the 3D face model)
+    public var scene: SCNScene!
+    private var node1:SCNNode!
+    private var contentNode: SCNReferenceNode? // Reference to the .scn file
     private lazy var model = contentNode!.childNode(withName: "model", recursively: true)! // Whole model including eyes (not used currently)
     private lazy var head = contentNode!.childNode(withName: "POLYWINK_Bella", recursively: true)! // Contains blendshapes
     
-    private var node1:SCNNode!
-    
+    // Camera
     private var captureSession: AVCaptureSession = AVCaptureSession()
     private let videoDataOutput = AVCaptureVideoDataOutput()
-
-    var cameraNode: SCNNode? {
+    public var cameraNode: SCNNode? {
         let cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
         cameraNode.position = SCNVector3(x: 0, y: 0.2, z: 1.1)
@@ -72,6 +71,7 @@ class MemojiViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, O
     
     // MARK: - AVCaptureVideoDataOutputSampleBufferDelegate -> where the stuff happens
     
+    // Capture frame from camera and process it through C++ Bridge
     func captureOutput(
         _ output: AVCaptureOutput,
         didOutput sampleBuffer: CMSampleBuffer,
@@ -105,12 +105,12 @@ class MemojiViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, O
             
             // Updating model blendshape in scene kit with the user's facial landmarks
             DispatchQueue.main.async {
+                // Update Nose tracker to inform user if he is too close or too far from the camera
                 self.noseReferentiel = self.faceModel.noseReferentialLength
                 
+                // Updating Eyes and mouth morphers of the 3D model according to the reading of the OpenCV program part
                 self.node1?.morpher?.setWeight(CGFloat(self.faceModel.jawOpen), forTargetNamed: "jawOpen")
-                
                 self.node1?.morpher?.setWeight(CGFloat(self.faceModel.eyeBlinkRight), forTargetNamed: "eyeBlink_R")
-                
                 self.node1?.morpher?.setWeight(CGFloat(self.faceModel.eyeBlinkLeft), forTargetNamed: "eyeBlink_L")
             }
         }

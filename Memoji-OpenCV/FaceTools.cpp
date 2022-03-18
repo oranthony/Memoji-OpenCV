@@ -86,8 +86,6 @@ optional<vector<Point2f>> FaceTools::getArrayOfLandmarksFromImage(Mat image, Cas
     
     // Find face
     vector<Rect> faces;
-    // Large version for reference positionning
-    vector<Rect> facesLarge;
     // Convert frame to grayscale because
     // faceDetector requires grayscale image.
     cvtColor(image, gray, COLOR_BGR2GRAY);
@@ -98,7 +96,6 @@ optional<vector<Point2f>> FaceTools::getArrayOfLandmarksFromImage(Mat image, Cas
     cv::Scalar color(0, 105, 205);
     //int frame_thickness = 4;
     
-    
     // Variable for landmarks.
     // Landmarks for one face is a vector of points
     // There can be more than one face in the image. Hence, we
@@ -108,21 +105,12 @@ optional<vector<Point2f>> FaceTools::getArrayOfLandmarksFromImage(Mat image, Cas
     // Run landmark detector
     bool success = facemark->fit(image,faces,landmarks);
     
-    facesLarge = faces;
-    
     if(success)
     {
         return landmarks[0];
     } else {
         return {};
     }
-    
-    // TO DO: check in caller of not empty
-    /*vector<Point2f> landmarksEmpty;
-    vector<Point2f>::iterator it;
-    it = landmarksEmpty.begin();
-    landmarksEmpty.insert(it, Point2f(0,0));
-    return landmarksEmpty;*/
 }
 
 /**
@@ -134,18 +122,12 @@ Mat FaceTools::getAnnotatedImageWithLandmarkFromImage(Mat image, CascadeClassifi
     
     // Find face
     vector<Rect> faces;
-    // Large version for reference positionning
-    vector<Rect> facesLarge;
     // Convert frame to grayscale because
     // faceDetector requires grayscale image.
     cvtColor(image, gray, COLOR_BGR2GRAY);
     
     // Detect faces
     faceDetector.detectMultiScale(gray, faces);
-   
-    cv::Scalar color(0, 105, 205);
-    int frame_thickness = 4;
-    
     
     // Variable for landmarks.
     // Landmarks for one face is a vector of points
@@ -155,8 +137,6 @@ Mat FaceTools::getAnnotatedImageWithLandmarkFromImage(Mat image, CascadeClassifi
     
     // Run landmark detector
     bool success = facemark->fit(image,faces,landmarks);
-    
-    facesLarge = faces;
     
     if(success)
     {
@@ -168,7 +148,9 @@ Mat FaceTools::getAnnotatedImageWithLandmarkFromImage(Mat image, CascadeClassifi
         }
         
         // Uncomment to draw rectangle arround face
-        //cv::rectangle(image, facesLarge[0], color, frame_thickness);
+        //cv::Scalar color(0, 105, 205);
+        //int frame_thickness = 4;
+        //cv::rectangle(image, faces[0], color, frame_thickness);
     }
     
     return image;

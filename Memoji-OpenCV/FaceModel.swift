@@ -9,10 +9,11 @@ import Foundation
 
 class FaceModel {
     
+    // Array that contains all the ladmarks value obtained from OpenCV facial detector
     var nsArr: Array<CGPoint> = []
     
     var eyeBlinkLeft: Float = 0.0
-    var eyeBlinkRight: Float = 1.0
+    var eyeBlinkRight: Float = 0.0
     var jawOpen: Float = 0.0
     var noseReferentialLength: Float = 0.0
 
@@ -26,7 +27,6 @@ class FaceModel {
     
     private func computeJawOpen(){
         if (nsArr.count > 58) {
-            print("enter compute jaw open if")
             var valJawOpen = Float(nsArr[57].y - nsArr[51].y)
             
             if (valJawOpen < 80) {
@@ -77,7 +77,6 @@ class FaceModel {
     private func computeNoseReferentialLength() {
         if (nsArr.count > 30) {
             let valNose = Float(nsArr[29].y - nsArr[27].y)
-            print(valNose)
             DispatchQueue.main.async {
                 self.noseReferentialLength = valNose
             }
