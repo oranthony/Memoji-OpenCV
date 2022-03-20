@@ -12,7 +12,7 @@ It is a SwiftUI App that records the front camera feed and send it to a C++ writ
 
 ![Basic Model of the App](Doc/model.jpg)
 
-
+![Processed Image](Doc/cutout-face.jpg)
 
 ## How to use it 
 Run the script install-opencv.sh to download opencv and the required 3D model. The srcipt will automatically move the files to the correct place.
