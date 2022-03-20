@@ -10,9 +10,14 @@ At university I worked at multiple occasions with OpenCV. I've done Steganograph
 ## How it works
 It is a SwiftUI App that records the front camera feed and send it to a C++ written OpenCV program through an Objective-C++ Bridge.
 
+![Basic Model of the App](Doc/model.jpg)
+
 
 
 ## How to use it 
 Run the script install-opencv.sh to download opencv and the required 3D model. The srcipt will automatically move the files to the correct place.
 
-Once compiled and install on an iPhone, you have to hold it at 90° close to your face. A text will be displayed on the app to tell you to get closer or move away from the screen in order to be at the correct distance from the device.
+Once compiled and installed, you have to hold your iPhone at 90° close to your face. A text will be displayed on the app to tell you to get closer or move away from the screen in order to be at the correct distance from the device.
+
+## Result
+The facial landmarks produced move too much from one image to another. This makes the result not stable enough to build an efficient face tracker for a memoji like App. 
