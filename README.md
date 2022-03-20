@@ -21,3 +21,7 @@ Once compiled and installed, you have to hold your iPhone at 90° close to your 
 
 ## Result
 The facial landmarks produced move too much from one image to another. This makes the result not stable enough to build an efficient face tracker for a memoji like App. 
+
+
+https://user-images.githubusercontent.com/6161861/159190314-6def951e-21a2-4dc5-a667-e46ff11bbcd5.mp4
+
