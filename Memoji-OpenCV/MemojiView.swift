@@ -13,7 +13,7 @@ struct MemojiView: View {
 
     var body: some View {
         VStack {
-            Text("\(memojiViewModel.noseReferentiel)")
+            Text("\(memojiViewModel.headDistanceIndicator)")
                 .padding()
             
             SceneView(

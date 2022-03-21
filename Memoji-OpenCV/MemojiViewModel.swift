@@ -14,7 +14,8 @@ class MemojiViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, O
     
     // Model to store facial landmarks data and process them
     @Published var faceModel:FaceModel = FaceModel()
-    @Published var noseReferentiel: Float = 0.0
+    @Published var headDistanceIndicator: String = " "        // Text to inform user if his head is too close or too far (based on noseReferential)
+    //@Published var noseReferential: Float = 0.0              // Use some landmark points to determine user's nose length
     
     // If the user want to see the annotated image instead of the 3D model of a face
     private var isCamLandmarkMode: Bool = false;
@@ -106,7 +107,14 @@ class MemojiViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, O
             // Updating model blendshape in scene kit with the user's facial landmarks
             DispatchQueue.main.async {
                 // Update Nose tracker to inform user if he is too close or too far from the camera
-                self.noseReferentiel = self.faceModel.noseReferentialLength
+                let noseReferentialLength = self.faceModel.noseReferentialLength
+                if (noseReferentialLength > 165) {
+                    self.headDistanceIndicator = "Too Close"
+                } else if (noseReferentialLength < 148) {
+                    self.headDistanceIndicator = "Too Far"
+                } else {
+                    self.headDistanceIndicator = " "
+                }
                 
                 // Updating Eyes and mouth morphers of the 3D model according to the reading of the OpenCV program part
                 self.node1?.morpher?.setWeight(CGFloat(self.faceModel.jawOpen), forTargetNamed: "jawOpen")
@@ -158,7 +166,6 @@ class MemojiViewModel: NSObject, AVCaptureVideoDataOutputSampleBufferDelegate, O
             
             let node = scene?.rootNode.childNode(withName: "POLYWINK_Bella", recursively: true)
             node1 = node
-        
         }
     }
     
