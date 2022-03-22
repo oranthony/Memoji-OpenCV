@@ -34,7 +34,7 @@ To counter that, I would try with various classifiers or even train one myself.
 
 ### Try another OpenCV implementation of landmark detection. 
 I'm currently using "FaceMarkLBF" which is based on a paper titled [“Face alignment at 3000 fps via regressing local binary features"](http://www.jiansun.org/papers/CVPR14_FaceAlignment.pdf) by S. Ren published in CVPR 2014. There are two others algorithms available in OpenCV: FaceMarkAAM and FaceMarkKazemi. 
-![OpenCV FaceMark API](Doc/opencv-Facemark.png)
+![OpenCV FaceMark API](Doc/opencv-Facemark.jpg)
 
 OpenCV provides two other possibilities:
 
@@ -47,7 +47,7 @@ Switching from one algorithm to another should be quick as those are still withi
 ### Try another Library specialized in face detection like DLIB in combination with OpenCV
 OpenCV main goal is to provide tools to do Computer Vision. It's a big Library with a wide purpose and aims to cover a maximum of features. My needs are quite specific and a more efficient approach would be to use OpenCV for what it does best: Computer Vision and use another Library for landmark facial detection. There is a widely used C++ Library used for that: DLIB.
 
-##V2: Add face orientation detection
+## V2: Add face orientation detection
 I stopped here and did not add this feature that would allow me to animate the Memoji by following the user's face because my main goal is to experiment with the technology and to find a possible solution as if I were to prototype it in a professional context. 
 Therefore I spent most of my time trying to find solutions to fix the lack of consistency of the facial landmark. But once this problem would be solved, there are features that I would like to add. One would be to add face orientation detection, and to do so by still using Computer Vision.
 
