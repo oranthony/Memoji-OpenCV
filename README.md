@@ -26,7 +26,8 @@ The facial landmarks produced move too much from one image to another. This make
 https://user-images.githubusercontent.com/6161861/159190314-6def951e-21a2-4dc5-a667-e46ff11bbcd5.mp4
 
 ## Possible Solutions to fix it
-If I were to continue working on it, here are some ways to solve this problem.
+At this point, I would start considering another approach.
+But if I were to keep working on it, here are some ways to solve this problem.
 
 ### Try another cascade classifier
 I use a trained model to detect faces: a cascade classifier. I took mine on the OpenCV website. I realized that even the tracking of the head is unstable. To see that, I draw a rectangle around the zone where the algorithm detected a face. The result is that the rectangle moves a lot. The facemark detector is using this as a reference to do its computation. If this reference zone changes a lot, we can assume that the result of the facemark detector will change as well from one image to another (even on a perfectly still head).
